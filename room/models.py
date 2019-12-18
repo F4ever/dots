@@ -28,8 +28,8 @@ class Room(models.Model):
 
 
 class Dot(models.Model):
-    abscissa = models.DecimalField(help_text='x')
-    ordinate = models.DecimalField(help_text='y')
+    abscissa = models.DecimalField(help_text='x', max_digits=10, decimal_places=10)
+    ordinate = models.DecimalField(help_text='y', max_digits=10, decimal_places=10)
 
     def __str__(self):
         return f'X: {self.abscissa}; Y: {self.ordinate}'

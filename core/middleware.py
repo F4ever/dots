@@ -8,7 +8,7 @@ class AnonimaizerUser:
         self.get_response = get_response
 
     def __call__(self, request):
-        if not request.user.is_authenticated():
+        if not request.user.is_authenticated:
             user = User.objects.create_user(
                 username=f'Anonim-{User.objects.count()}'
             )
