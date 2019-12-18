@@ -1,0 +1,16 @@
+{% load static %}
+
+<!doctype html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Dots game</title>
+        <script src="{% static "js/pixi.min.js" %}"></script>
+        <script src="{% static "js/game.js" %}"></script>
+    </head>
+
+    <body>
+        <button onclick="startNewGame();">New Game</button>
+        <button onclick="finishGame();">FINISH</button>
+    </body>
+</html>
