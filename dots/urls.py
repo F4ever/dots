@@ -20,6 +20,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('', include('room.urls')),
+    path('', include('core.urls')),
+    path('api/v1/', include('room.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

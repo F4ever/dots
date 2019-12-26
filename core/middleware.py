@@ -10,7 +10,7 @@ class AnonimaizerUser:
     def __call__(self, request):
         if not request.user.is_authenticated:
             user = User.objects.create_user(
-                username=f'Anonim-{User.objects.count()}'
+                username=f'Anonim_{User.objects.count()}'
             )
 
             login(request, user)
