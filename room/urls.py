@@ -1,6 +1,6 @@
 from django.urls import re_path
 
-from room.views import RoomViewSet, UserJoinViewSet
+from room.views import RoomViewSet, UserJoinViewSet, PlayedRoomViewSet, DoneRoomViewSet
 
 
 urlpatterns = [
@@ -9,5 +9,6 @@ urlpatterns = [
 
     re_path(r'^joins/$', UserJoinViewSet.as_view({'post': 'create'})),
 
-    # url(r'^rooms/played/$', RoomViewSet.as_view({'get': 'list'})),
+    re_path(r'^rooms/played/$', PlayedRoomViewSet.as_view({'get': 'list'})),
+    re_path(r'^rooms/done/$', DoneRoomViewSet.as_view({'get': 'list'})),
 ]

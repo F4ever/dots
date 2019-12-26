@@ -24,6 +24,32 @@ class ActiveRoomSerializer(serializers.ModelSerializer):
         read_only_fields = ['creator']
 
 
+class PlayedRoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Room
+        fields = (
+            'id',
+            'creator',
+            'user_count',
+            'status',
+            'figure',
+            'user_played',
+        )
+
+
+class DoneRoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Room
+        fields = (
+            'id',
+            'creator',
+            'user_count',
+            'status',
+            'figure',
+            'user_played',
+        )
+
+
 class DotSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dot
