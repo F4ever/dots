@@ -71,6 +71,11 @@ class UserJoinSerializer(serializers.ModelSerializer):
         )
         read_only_fields = ['user']
 
+    def validate_room(self, room):
+        if room.status != room.Status.ACTIVE:
+            raise serializers.ValidationError('Room already Played')
+        return room
+
     def validate(self, attrs):
         validated_data = super().validate(attrs)
         validated_data['user'] = self.context['request'].user
